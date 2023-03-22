@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/categories">Category</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create</li>
+  </ol>
+</nav>
+
+<form action="/api/category" method="post">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">New Category</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="name">
+  </div>
+  <button type="submit" class="btn btn-success">Create</button>
+</form>
+<%- include('../partials/footer') %>

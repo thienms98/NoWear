@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Category</li>
+  </ol>
+</nav>
+
+<button type="button" class="btn btn-light">
+  <a class="nav-link" href="categories/create">New Category</a>
+</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% categories.forEach((category, index) => { %>
+      <tr>
+        <td><%= index %></td>        
+        <td><%= category._doc.name %></td>
+        <td>
+          <span class="btn btn-primary">
+            <a href="/categories/edit?_id=<%= category._id %>" style="text-decoration: none; color: white" class="nav-link">Edit</a>
+          </span>
+          <span class="btn btn-danger">
+            <a href="/categories/delete?_id=<%= category._id %>" style="text-decoration: none; color: white" class="nav-link">Delete</a>
+          </span>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+
+<%- include('../partials/footer') %>
